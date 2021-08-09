@@ -9,7 +9,7 @@ import { NavigationContainer } from "@react-navigation/native";
 //redux
 import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
-import eventsReducer from "./reducers/eventsReducer";
+import reducers from "./reducers/reducers";
 import thunk from "redux-thunk";
 
 // Before rendering any navigation stack
@@ -17,23 +17,21 @@ import { enableScreens } from "react-native-screens";
 enableScreens();
 
 import Screens from "./navigation/Screens";
-import { Images, articles, argonTheme } from "./constants";
+import { Images, argonTheme } from "./constants";
 
-const store = createStore(eventsReducer, applyMiddleware(thunk));
+const store = createStore(reducers, applyMiddleware(thunk));
 
 // cache app images
 const assetImages = [
   Images.Onboarding,
   Images.LogoOnboarding,
   Images.Logo,
-  Images.Pro,
   Images.ArgonLogo,
   Images.iOSLogo,
   Images.androidLogo,
 ];
 
 // cache product images
-articles.map((article) => assetImages.push(article.image));
 
 function cacheImages(images) {
   return images.map((image) => {

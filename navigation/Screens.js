@@ -1,28 +1,21 @@
 import React from "react";
-import { Easing, Animated, Dimensions } from "react-native";
+import { Dimensions } from "react-native";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import { Block } from "galio-framework";
-
 // screens
-import Home from "../screens/Home";
+import OneTimeEvents from "../screens/OneTimeEvents";
 import Onboarding from "../screens/Onboarding";
-import Pro from "../screens/Pro";
-import Profile from "../screens/Profile";
-import Register from "../screens/Register";
-import Elements from "../screens/Elements";
-import Articles from "../screens/Articles";
 import StationaryPoints from "../screens/StationaryPoints";
 import DonorSurvey from "../screens/DonorSurvey";
 // drawer
 import CustomDrawerContent from "./Menu";
 
 // header for screens
-import { Icon, Header } from "../components";
-import { argonTheme, tabs } from "../constants";
+import { Header } from "../components";
+import { argonTheme } from "../constants";
 
 const { width } = Dimensions.get("screen");
 
@@ -52,7 +45,7 @@ function OneTimeEventsStack(props) {
     <Stack.Navigator mode="card" headerMode="screen">
       <Stack.Screen
         name="OneTimeEvents"
-        component={Home}
+        component={OneTimeEvents}
         options={{
           header: ({ navigation, scene }) => (
             <Header
@@ -107,7 +100,7 @@ function StationaryPointsStack(props) {
       />
       <Stack.Screen
         name="OneTimeEvents"
-        component={Home}
+        component={OneTimeEvents}
         options={{
           header: ({ navigation, scene }) => (
             <Header

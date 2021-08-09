@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Argon FREE React Native",
-    "slug": "argon-free-react-native",
+    "name": "Dar Krwi",
+    "slug": "dar-krwi-mobile-app",
     "privacy": "public",
     "sdkVersion": "39.0.0",
     "platforms": [
-      "ios",
+       "ios",
       "android"
     ],
     "version": "1.6.0",
@@ -25,7 +25,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": "Argon React Native, based on Argon Design System. Coded by Creative Tim",
+    "description": "Aplikacja Dar Krwi dla krwiodawców. Autor: Aleksandra Ruta",
     "android": {
       "package": "ap1.apk",
       "config": {

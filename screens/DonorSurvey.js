@@ -12,7 +12,7 @@ import Dialog, {
   DialogFooter,
   DialogButton,
 } from "react-native-popup-dialog";
-
+import axios from "axios";
 import { Text, Input, Form, Picker } from "native-base";
 import CheckBox from "@react-native-community/checkbox";
 //galio
@@ -21,6 +21,7 @@ import { Block, theme, Button, Icon } from "galio-framework";
 import { argonTheme } from "../constants";
 import { survey } from "../constants/form";
 import DateField from "react-native-datefield";
+import { serverURL } from "../assets/config/server";
 
 const { width } = Dimensions.get("screen");
 
@@ -51,8 +52,13 @@ class DonorSurvey extends React.Component {
   componentDidMount = () => {};
 
   sendForm = () => {
-    //TODO send and redirect
-    console.log(this.state.currentSurvey);
+    axios
+      .post(`${serverURL}forms/postform`, this.state.currentSurvey)
+      .then((res) => {
+        console.log("res data", res.data);
+        this.setState({ visible: false });
+      })
+      .catch((err) => console.log(err));
   };
 
   updateValue = (value, index) => {
@@ -67,12 +73,6 @@ class DonorSurvey extends React.Component {
   };
 
   render() {
-    // if (this.state.index >= this.state.currentSurvey.length) {
-    //   button = <LogoutButton onClick={this.handleLogoutClick} />;
-    // } else {
-    //   button = <LoginButton onClick={this.handleLoginClick} />;
-    // }
-
     return (
       <View style={{ flex: 1 }}>
         <Text h5 style={styles.title} color={argonTheme.COLORS.DEFAULT}>
@@ -365,3 +365,12 @@ const styles = StyleSheet.create({
 });
 
 export default DonorSurvey;
+
+makeRequest = (method, data, api = "/points/pointList") => {
+  // returns a Promise
+  return axios({
+    method: method,
+    url: api,
+    data: data,
+  });
+};

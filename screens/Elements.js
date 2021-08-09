@@ -6,10 +6,8 @@ import {
   Dimensions,
   TouchableOpacity,
 } from "react-native";
-// Galio components
 import { Block, Text, Button as GaButton, theme } from "galio-framework";
-// Argon themed components
-import { argonTheme, tabs } from "../constants/";
+import { argonTheme } from "../constants/";
 import { Button, Select, Icon, Input, Header, Switch } from "../components/";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 
@@ -398,12 +396,7 @@ class Elements extends React.Component {
           </Block>
 
           <Block style={{ marginBottom: theme.SIZES.BASE }}>
-            <Header
-              tabs={tabs.categories}
-              search
-              title="Title"
-              navigation={this.props.navigation}
-            />
+            <Header search title="Title" navigation={this.props.navigation} />
           </Block>
 
           <Block style={{ marginBottom: theme.SIZES.BASE }}>

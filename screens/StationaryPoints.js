@@ -64,7 +64,7 @@ class StationaryPoints extends React.Component {
       <Block flex center style={styles.StationaryPoints}>
         <ScrollView
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={styles.articles}
+          contentContainerStyle={styles.scrollView}
         >
           {this.state.pointList.map(
             (element, i) => (
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   StationaryPoints: {
     width: width,
   },
-  articles: {
+  scrollView: {
     width: width - theme.SIZES.BASE * 2,
     paddingVertical: theme.SIZES.BASE,
   },

@@ -15,13 +15,7 @@ function CustomDrawerContent({
   ...rest
 }) {
   const insets = useSafeArea();
-  const screens = [
-    // "Home",
-    // "Profil",
-    "Akcje wyjazdowe",
-    "Stałe punkty poboru",
-    "Formularz",
-  ];
+  const screens = ["Akcje wyjazdowe", "Stałe punkty poboru", "Formularz"];
   return (
     <Block
       style={styles.container}
